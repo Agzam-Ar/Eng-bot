@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Starter Unit | b</title>
+
+<script type="text/javascript">
+		let colors = ['white', 'blue', 'yellow', 'red', 'green', 'black', 'pink'];
+	window.onload = function() {
+	let ngons = document.body.getElementsByClassName('ngon');
+	for (var i = 0; i < ngons.length; i++) {
+		console.log(ngons[i]);
+		ngons[i].style.color = colors[0];
+		ngons[i].onclick = function() {
+				let colorId = colors.indexOf(this.style.color);
+				colorId++;
+				colorId = colorId%colors.length;
+				this.style.color = colors[colorId];
+				this.style.background = colors[colorId];
+				check();
+		};
+
+		document.getElementById('start').onclick = function() {
+			start();
+		}
+	}
+
+
+		function sleep(ms) {
+  			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+
+		async function start() {
+				let tt = document.getElementById('timetask');
+				document.getElementById('start').style.display = "none";
+				tt.style.display = "block";
+				let p = document.getElementById('progress');
+				let time = document.getElementById('ltime');
+				for (var i = 0; i < 60*6; i+=0.01) {
+						p.value = i;
+						let lsec = Math.round(360 - i);
+						let s = lsec%60;
+						let m = (lsec-s)/60;
+						if(s < 10) {
+							s = "0" + s;
+						}
+						time.innerText = m + ":" + s;
+  					await sleep(10);
+				}
+				time.innerText = "0:00";
+				p.value = 360;
+				tt.style.display = "none";
+				document.getElementById('start').style.display = "block";
+		}
+}
+
+function check() {
+		let result = '';
+		let ngons = document.body.getElementsByClassName('ngon');
+		for (var i = 0; i < ngons.length; i++) {
+				let colorId = colors.indexOf(ngons[i].style.color);
+				result = result + "" + colorId;
+		}
+
+		let el = document.getElementById('ngons');
+				console.log("result: " + result);
+		if(result == '0416352'){
+			el.style.background = "#7FFF8E";
+		}else{
+			el.style.background = "#FFF";
+		}
+}
+</script>
+
+
+	<style type="text/css">
+
+		body {
+			font-family: sans-serif;
+			padding: 10px 25px;
+			text-align: center;
+		}
+
+        ::-webkit-scrollbar {
+			height: 5px;
+			width: 10px;
+			background-color: #EEE;
+		}
+
+
+		::-webkit-scrollbar-thumb {
+			background-color: #999;
+			border-radius: 5px;
+		}
+
+     	wrapper { 
+     		display: block;
+     		position: relative;
+				top: 0;
+				left: 50%;
+				height: fit-content;
+				width: fit-content;
+				transform: translate(-50%, 0);
+				text-align: left;
+     	}
+
+		h1 {
+			display: block;
+			text-align: center;
+			color: #FFF;
+			font-weight: bold;
+			background: #F3AE58;
+			font-size: 70px;
+    	width: 70px;
+    	height: 70px;
+    	border-radius: 10px;
+
+     	position: relative;
+			left: 50%;
+			transform: rotate(45deg) translate(-50%, 0);
+		}
+
+		h1 > h1block {
+			display: block;
+			text-align: center;
+			color: #FFF;
+			font-weight: bold;
+			font-size: 50px;
+    	transform: rotate(-45deg) translate(0, 25%);
+    	width: 50px;
+    	height: 50px;
+		}
+
+		task {
+			font-weight: bold;
+			font-size: 25px;
+		}
+
+		ex {
+			display: inline-block;
+			color: #FFF;
+			background: #F3AE58;
+			width: 20px;
+			text-align: center;
+			padding: 3px 7px;
+			border-radius: 7px;
+			user-select: none;
+		}
+
+		dilog, translate {
+			display: block;
+			margin-left: 15px;
+			border-left: 3px #333 solid;
+			padding: 5px 15px;
+			background: #EEE;
+			font-size: 20px;
+			border-bottom-right-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+
+		br {
+			user-select: none;
+		}
+
+		input {
+   			user-select: text;
+   			color: #555;
+			font-size: 20px;
+			padding: 2px 5px;
+    		width: 50px;
+    		border: none;
+    		outline: none;
+    		transition: 0.15s ease-in-out;
+		}
+		input:focus {
+   			color: #000;
+   			background: #FFF0B5;
+		}
+
+		translate {
+  			height: auto;
+  			max-height: 30px;
+  			overflow: hidden;
+  			background: #EEE;
+  			transition: max-height 1.0s;
+    		transition: 1.0s;
+		}
+
+		translate:hover {
+			color: #000;
+			max-height: fit-content;
+  			max-height: 250px;
+  			background: #DDD;
+		}
+
+		pageend {
+			display: block;
+			height: 500px;
+   			background: #FFF0B5;
+   			opacity: 0;
+		}
+
+		bb {
+			font-size: 20px;
+			font-weight: 900;
+    		margin-bottom: 5px;
+    		display: block;
+		}
+
+		button {
+    		user-select: none !important;
+		}
+
+		button.check {
+    		display: block;
+    		padding: 5px 10px;
+    		border-radius: 5px;
+    		border: none;
+    		font-size: 25px;
+    		margin: 10px;
+		}
+
+		button.check.c:focus  {
+			background: #D0FFCE;
+		}
+
+		button.check.uc:focus {
+			background: #FFCECE;
+		}
+
+		ol {
+			font-size: 25px;
+		}
+
+		/*table.note {
+   			border-collapse: collapse;
+   			border-spacing: 20px 0px;
+   			background: #6678b1;
+    		box-shadow: 2px 3px 10px #0000008f;
+    		transform: rotate3d(1, 1, 1, 349deg);
+    		font-size: 25px;
+    		padding: 0px 0px;
+    		margin: 10px 50px;
+    		border: 2px solid #b9b9b9;
+		}*/
+
+		/*th, td {
+  			color: #111;
+				background: #FDFFF1;
+  			border: 2px solid #6678b1;
+  			padding: 5px 25px;
+		}*/
+
+
+		table.card {
+				display: block;
+				background: #FDF4D3;
+   			border-spacing: 10px 0px;
+				padding: 10px 20px;
+				width: fit-content;
+				border-radius: 15px;
+				border: 3px #D5CE9B solid;
+    		transform: rotate3d(1, 1, 1, 350deg);
+    		box-shadow: 10px 4px 19px #0009;
+		}
+
+		td {
+  			padding: 5px 10px;
+		}
+
+		hcard {
+				color: #726F32;
+				font-weight: 900;
+   		 	font-size: 25px;
+		}
+
+
+		tcard {
+				color: #000;
+				font-weight: 500;
+   		 	font-size: 20px;
+   		 	font-family: cursive;
+		}
+
+
+
+
+
+
+
+
+
+
+		.user {
+			width: 80px;
+  		height: 80px;
+  		border: 10.6px solid #F3AE58;
+  		border-radius: 50%;
+  		background-color: #F3AE58;
+  		position: relative;
+  		overflow: hidden;
+		}
+
+	.user::before {
+  	content : '';
+  	display: block;
+  	width: 30px;
+  	height: 30px;
+  	background: #fff;
+  	border-radius: 50%;
+  	position: absolute;
+  	left: 50%;
+  	top: 2px;
+  	transform: translateX(-50%);
+	}
+
+	.user::after {
+  		content : '';
+  		display: block;
+  		width: 60px;
+  		height: 60px;
+  		background:#fff;
+  		border-radius:50%;
+  		position: absolute;
+  		left: 50%;
+  		bottom: -16px;
+  		transform: translateX(-50%);
+	}
+
+	.userwrapper {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	min-height: 100vh;
+	}
+	</style>
+
+</head>
+<body>
+<wrapper id="wrapper">
+<div><h1><h1block>b</h1block></h1></div>
+<task><ex>1</ex> Listen and repeat. Then talk with your friend.</task><br><br>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/k73hyhp6Iuc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+<task><ex>2</ex> What have you got in your schoolbag today?</task><br><br>
+<div>
+<dilog>
+In my schoolbag today, ...
+</dilog>
+<br>
+<translate>
+<bb>Перевод<br></bb>
+Сегодня в моём портфеле, ...
+</translate>
+</div>
+<br><br>
+<task><ex>3</ex> This is a library card. Read and answer.</task><br><br><br>
+<table class="card">
+	<tr>
+  	<td><div><div class="user"></div></div></td>
+  	<td>
+  		<div style="width: 300px">
+				<hcard>Name</hcard><br>
+				<tcard>Steve Baxter</tcard><br>
+				<hcard>Age</hcard><br>
+				<tcard>10</tcard><br>
+				<hcard>Class</hcard><br>
+				<tcard>4A</tcard><br>
+				<hcard>Phone no</hcard><br>
+				<tcard>203 587641</tcard><br>
+			</div>
+		</td>
+  </tr>
+	<block50>
+		
+	</block50>
+	<block50>
+	</block50>
+</table>
+<br><br>
+<dilog>
+<b>1.</b> What's Steve's surname?<br>
+<b>2.</b> How old is he?<br>
+<b>3.</b> What year is he in?<br>
+<b>4.</b> What's his phone number?<br>
+</dilog>
+<br>
+<translate>
+<bb>Перевод<br></bb>
+<br>
+<b>1.</b> Какая фамилия у Стива?<br>
+<b>2.</b> Сколько ему лет?<br>
+<b>3.</b> В каком году его день рождения?<br>
+<b>4.</b> Какой у него номер телефона?<br>
+</translate>
+<br><br>
+<task><ex>4</ex> Copy the shapes. Listen and colour. Then say.</task><br><br>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/Sxu-AWP9JtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<dilog>The big triangle is blue.</dilog>
+<style type="text/css">
+	.ngon {
+			font-size: 200px;
+			user-select: none !important;
+			text-shadow: 1px 1px 20px #000;
+			box-shadow: 1px 1px 20px #000;
+			margin: 50px;
+	}
+	star {
+		content: '&#9733; ';
+	}
+
+	triangle, star {
+		display: contents;
+		box-shadow: none !important;
+	}
+
+	.big {
+			font-size: 400px !important;
+	}
+
+	smallsquare {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			transform: rotate(-25deg);
+	}
+
+	smallcircle {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+		}
+
+	square, circlee {
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+	}
+
+	circlee, smallcircle {
+		border-radius: 50%;
+	}
+
+	ngons {
+		display: block;
+		background: #FFF;
+		border: 2px #333 dashed;
+		border-radius: 10px;
+		user-select: none !important;
+	}
+</style>
+<br>
+<ngons id="ngons">
+<star class="ngon">&#9733;</star>
+<triangle class="ngon small">&#9660;</triangle>
+<triangle class="ngon big">&#9660;</triangle>
+<smallsquare class="ngon"></smallsquare><br>
+<square class="ngon"></square>
+<circlee class="ngon"></circlee>
+<smallcircle class="ngon"></smallcircle>
+</ngons>
+<br>
+<br>
+<task><ex>5</ex> How good is your memory? Work with a friend. You've got six minutes!</task><br><br>
+<style type="text/css">
+	#timetask {
+		border: 3px #E2BF8E solid;
+		background: #FAFBF3;
+	}
+
+	button {
+		display: block;
+		border-radius: 10px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+   	transition: 0.15s ease-in-out;
+	}
+
+	button:hover {
+    background: #70FF74;
+	}
+</style>
+<button id="start">Start</button><br><br>
+<label id="ltime">6:00</label><br>
+<progress value="0" max="360" id="progress" style="width: 100%"></progress>
+<br><br>
+<div style="display: none;" id="timetask">
+<ol>Write the names of:<br>
+	<br>
+<ol>
+	<li>four subjects.</li>
+	<li>five members of a family. (e. g. Grandma, ...)</li>
+	<li>five food/drink items.</li>
+	<li>three things you can find in your room.</li>
+	<li>three animals that have got four legs.</li>
+	<li>three things you can find in a kitchen.</li>
+	<li>three activities you can do in the evening.</li>
+</ol>
+</ol>
+</div>
+<pageend></pageend>
+</wrapper>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Back Together!</title>
+
+	<style type="text/css">
+
+		body {
+			font-family: sans-serif;
+			padding: 10px 25px;
+			text-align: center;
+		}
+
+        ::-webkit-scrollbar {
+			height: 5px;
+			width: 10px;
+			background-color: #EEE;
+		}
+
+
+		::-webkit-scrollbar-thumb {
+			background-color: #999;
+			border-radius: 5px;
+		}
+
+     	wrapper { 
+     		display: block;
+     		position: relative;
+			top: 0;
+			left: 50%;
+			height: fit-content;
+			width: fit-content;
+			transform: translate(-50%, 0);
+			text-align: left;
+     	}
+
+		h1 {
+			text-align: center;
+			color: #F3AE58;
+			font-weight: bold;
+			font-size: 70px;
+		}
+
+		task {
+			font-weight: bold;
+			font-size: 25px;
+		}
+
+		ex {
+			display: inline-block;
+			color: #FFF;
+			background: #F3AE58;
+			width: 20px;
+			text-align: center;
+			padding: 3px 7px;
+			border-radius: 7px;
+			user-select: none;
+		}
+
+		dilog, translate {
+			display: block;
+			margin-left: 15px;
+			border-left: 3px #333 solid;
+			padding: 5px 15px;
+			background: #EEE;
+			font-size: 20px;
+			border-bottom-right-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+
+		br {
+			user-select: none;
+		}
+
+		input {
+   			user-select: text;
+   			color: #555;
+			font-size: 20px;
+			padding: 2px 5px;
+    		width: 50px;
+    		border: none;
+    		outline: none;
+    		transition: 0.15s ease-in-out;
+		}
+		input:focus {
+   			color: #000;
+   			background: #FFF0B5;
+		}
+
+		translate {
+  			height: auto;
+  			max-height: 30px;
+  			overflow: hidden;
+  			background: #EEE;
+  			transition: max-height 1.0s;
+    		transition: 1.0s;
+		}
+
+		translate:hover {
+			color: #000;
+			max-height: fit-content;
+  			max-height: 250px;
+  			background: #DDD;
+		}
+
+		pageend {
+			display: block;
+			height: 500px;
+   			background: #FFF0B5;
+   			opacity: 0;
+		}
+
+		bb {
+			font-size: 20px;
+			font-weight: 900;
+    		margin-bottom: 5px;
+    		display: block;
+		}
+
+		button {
+    		user-select: none !important;
+		}
+
+		button.check {
+    		display: block;
+    		padding: 5px 10px;
+    		border-radius: 5px;
+    		border: none;
+    		font-size: 25px;
+    		margin: 10px;
+		}
+
+		button.check.c:focus  {
+			background: #D0FFCE;
+		}
+
+		button.check.uc:focus {
+			background: #FFCECE;
+		}
+
+		ol {
+			font-size: 25px;
+		}
+
+		table.note {
+   			/*border-collapse: collapse;*/
+   			/*border-spacing: 20px 0px;*/
+   			background: #6678b1;
+    		box-shadow: 2px 3px 10px #0000008f;
+    		transform: rotate3d(1, 1, 1, 349deg);
+    		font-size: 25px;
+    		padding: 0px 0px;
+    		margin: 10px 50px;
+    		border: 2px solid #b9b9b9;
+		}
+
+		th, td {
+  			color: #111;
+			background: #FDFFF1;
+  			/*border: 2px solid #6678b1;*/
+  			padding: 5px 25px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function newname() {
+			document.getElementById('liamdavid').innerText = document.getElementById('iamdavid').value;
+		}
+	</script>
+</head>
+<body>
+<wrapper id="wrapper">
+<h1>Back Together!</h1>
+<task><ex>1</ex> Listen and point. Then sing along!</task><br><br>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/PWQsyHw3z10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+<task><ex>2</ex> Introduce yourself to someone new.</task><br><br>
+<div>
+<dilog>
+<b>A:</b> Hi, my name's Kelly. What's your name?<br>
+<b>B:</b> Hello! I'm <input type="text" id="iamdavid" oninput="newname()" onchange="newname()" value="David" /> .<br>
+<b>A:</b> Nice to meet you, <label id="liamdavid">David</label>.<br>
+</dilog>
+<br>
+<translate>
+<bb>Перевод<br></bb>
+<b>A:</b> Привет, меня зовут Келли. Как тебя зовут?<br>
+<b>B:</b> Привет! Я <label id="liamdavid">David</label>.<br>
+<b>A:</b> Приятно познакомиться, <label id="liamdavid">David</label>.<br>
+</translate>
+</div>
+<br><br>
+<task><ex>3</ex> Read and choose. Then act out.</task><br>
+<ol>
+	<li>What's your name?
+		<button class="check c">a) I'm Philip.</button>
+		<button class="check uc">b) This is Philip.</button>
+	</li>
+	<li>Sandy's a nice name!
+		<button class="check c">a) Yes, it's short for Sandra..</button>
+		<button class="check uc">b) I like her too.</button>
+	</li>
+	<li>Do you like playing computer games?
+		<button class="check uc">a) No, I'm playing now.</button>
+		<button class="check c">b) Yes, it's fun.</button>
+	</li>
+	<li>Goodbye, Ron.
+		<button class="check uc">a) Oh, hello!</button>
+		<button class="check c">b) Bye. See you later.</button>
+	</li>
+	<li>Whose is this ball?
+		<button class="check uc">a) It's Peter.</button>
+		<button class="check c">b) It's Peter's.</button>
+	</li>
+</ol>
+<task><ex>4</ex> Ask your friends. Find someone who…</task><br>
+<br>
+<table class="note">
+  <tr>
+  	<td></td>
+  	<th>Name</th>
+  </tr>
+  <tr>
+  	<td>can swim.</td><td></td>
+  </tr>
+  <tr>
+  	<td>can play soccer.</td><td></td>
+  </tr>
+  <tr>
+  	<td>can dance.</td><td></td>
+  </tr>
+  <tr>
+  	<td>can play basketball.</td><td></td>
+  </tr>
+  <tr>
+  	<td>can draw.</td><td></td>
+  </tr>
+  <tr>
+  	<td>can ride a bike.</td><td></td>
+  </tr>
+</table>
+<br>
+<br>
+<div>
+<dilog>
+	<b>A:</b> Can you swim?<br>
+	<b>B:</b> Yes, I can swim really well. <b>OR</b> No, I can't. / Not very well.
+</dilog>
+<br>
+<translate>
+<bb>Перевод<br></bb>
+<b>A:</b> Ты умеешь плавать?<br>
+<b>B:</b> Да, я действительно хорошо плаваю. <b>ИЛИ</b> Нет, я не могу. / Не очень хорошо.<br>
+</translate>
+</div>
+<br>
+<br>
+<pageend></pageend>
+</wrapper>
+</body>
+</html>
