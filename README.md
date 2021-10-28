@@ -6,11 +6,11 @@
 ✔ a
 ✔ b
 ```
-#### ⌛ Module 1: (1/8) `12,5%`
+#### ⌛ Module 1: (2/8) `25%`
 ```
 ✔ 1a
-⌛ 1b
-✖ 2a
+✔ 1b
+⌛ 2a
 ✖ 2b
 ✖ Goldilocks
 ✖ Activities Modul 1
