@@ -4,55 +4,6 @@
 	<meta charset="utf-8">
 	<title>My best friend!</title>
 
-<script type="text/javascript">
-	let colors = ['black', '#4C3220', '#3B8FCC', '#5DAA65'];
-	let colorsNames = ['black', 'brown', 'blue', 'green'];
-	let colorId = 0;
-
-	let hairs = ['black', '#E2A72B'];
-	let hairNames = ['dark', 'fair'];
-	let hairId = 0;
-
-	window.onload = function() {
-		let eyes = document.body.getElementsByTagName('eye');
-		document.getElementById('leye').innerText = colorsNames[colorId];
-		for (var i = 0; i < eyes.length; i++) {
-			eyes[i].style.background = 'black';
-			eyes[i].onclick = function() {
-				colorId++;
-				colorId = colorId%colors.length;
-				let eyes = document.body.getElementsByTagName('eye');
-				console.log(colorId);
-				for (var i = 0; i < eyes.length; i++) {
-					eyes[i].style.background = colors[colorId];
-				}
-
-				document.getElementById('leye').innerText = colorsNames[colorId];
-			}
-		}
-
-
-		let hair = document.body.getElementsByTagName('hair');
-		document.getElementById('lhair').innerText = hairNames[hairId];
-		for (var i = 0; i < hair.length; i++) {
-			hair[i].style.borderTopColor = hairs;
-			hair[i].onclick = function() {
-				hairId++;
-				hairId = hairId%hairs.length;
-				let hairss = document.body.getElementsByTagName('hair');
-				console.log(hairId);
-				for (var i = 0; i < hairss.length; i++) {
-					hairss[i].style.borderTopColor = hairs[hairId];
-				}
-
-				document.getElementById('lhair').innerText = hairNames[hairId];
-			}
-		}
-	}
-
-</script>
-
-
 	<style type="text/css">
 
 		body {
@@ -84,20 +35,11 @@
 			text-align: left;
      	}
 
-				h1 {
-			display: block;
+		h1 {
 			text-align: center;
-			color: #FFF;
+			color: #F3AE58;
 			font-weight: bold;
-			background: #F3AE58;
 			font-size: 70px;
-    	width: 70px;
-    	height: 70px;
-    	border-radius: 10px;
-
-     	position: relative;
-			left: 50%;
-			transform: rotate(45deg) translate(-50%, 0);
 		}
 
 		h1 > h1block {
@@ -365,7 +307,7 @@
 </head>
 <body>
 <wrapper id="wrapper">
-<div><h1><h1block>1b</h1block></h1></div>
+<h1>My Best Friend!</h1>
 <task><ex>1</ex> Listen and repeat.</task><br><br>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/fcb7X7qNMv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
 <task><ex>2</ex> Chit-Chat.</task><br><br>
