@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My best friend!</title>
+
+<script type="text/javascript">
+	let colors = ['black', '#4C3220', '#3B8FCC', '#5DAA65'];
+	let colorsNames = ['black', 'brown', 'blue', 'green'];
+	let colorId = 0;
+
+	let hairs = ['black', '#E2A72B'];
+	let hairNames = ['dark', 'fair'];
+	let hairId = 0;
+
+	window.onload = function() {
+		let eyes = document.body.getElementsByTagName('eye');
+		document.getElementById('leye').innerText = colorsNames[colorId];
+		for (var i = 0; i < eyes.length; i++) {
+			eyes[i].style.background = 'black';
+			eyes[i].onclick = function() {
+				colorId++;
+				colorId = colorId%colors.length;
+				let eyes = document.body.getElementsByTagName('eye');
+				console.log(colorId);
+				for (var i = 0; i < eyes.length; i++) {
+					eyes[i].style.background = colors[colorId];
+				}
+
+				document.getElementById('leye').innerText = colorsNames[colorId];
+			}
+		}
+
+
+		let hair = document.body.getElementsByTagName('hair');
+		document.getElementById('lhair').innerText = hairNames[hairId];
+		for (var i = 0; i < hair.length; i++) {
+			hair[i].style.borderTopColor = hairs;
+			hair[i].onclick = function() {
+				hairId++;
+				hairId = hairId%hairs.length;
+				let hairss = document.body.getElementsByTagName('hair');
+				console.log(hairId);
+				for (var i = 0; i < hairss.length; i++) {
+					hairss[i].style.borderTopColor = hairs[hairId];
+				}
+
+				document.getElementById('lhair').innerText = hairNames[hairId];
+			}
+		}
+	}
+
+</script>
+
+
+	<style type="text/css">
+
+		body {
+			font-family: sans-serif;
+			padding: 10px 25px;
+			text-align: center;
+		}
+
+        ::-webkit-scrollbar {
+			height: 5px;
+			width: 10px;
+			background-color: #EEE;
+		}
+
+
+		::-webkit-scrollbar-thumb {
+			background-color: #999;
+			border-radius: 5px;
+		}
+
+     	wrapper { 
+     		display: block;
+     		position: relative;
+			top: 0;
+			left: 50%;
+			height: fit-content;
+			width: fit-content;
+			transform: translate(-50%, 0);
+			text-align: left;
+     	}
+
+				h1 {
+			display: block;
+			text-align: center;
+			color: #FFF;
+			font-weight: bold;
+			background: #F3AE58;
+			font-size: 70px;
+    	width: 70px;
+    	height: 70px;
+    	border-radius: 10px;
+
+     	position: relative;
+			left: 50%;
+			transform: rotate(45deg) translate(-50%, 0);
+		}
+
+		h1 > h1block {
+			display: block;
+			text-align: center;
+			color: #FFF;
+			font-weight: bold;
+			font-size: 50px;
+    	transform: rotate(-45deg) translate(0, 25%);
+    	width: 50px;
+    	height: 50px;
+		}
+
+		task {
+			font-weight: bold;
+			font-size: 25px;
+		}
+
+		ex {
+			display: inline-block;
+			color: #FFF;
+			background: #F3AE58;
+			width: 20px;
+			text-align: center;
+			padding: 3px 7px;
+			border-radius: 7px;
+			user-select: none;
+		}
+
+		dilog, translate {
+			display: block;
+			margin-left: 15px;
+			border-left: 3px #333 solid;
+			padding: 5px 15px;
+			background: #EEE;
+			font-size: 20px;
+			border-bottom-right-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+
+		br {
+			user-select: none;
+		}
+
+		input {
+   			user-select: text;
+   			color: #555;
+			font-size: 20px;
+			padding: 2px 5px;
+    		width: 50px;
+    		border: none;
+    		outline: none;
+    		transition: 0.15s ease-in-out;
+		}
+		input:focus {
+   			color: #000;
+   			background: #FFF0B5;
+		}
+
+		translate {
+  			height: auto;
+  			max-height: 30px;
+  			overflow: hidden;
+  			background: #EEE;
+  			transition: max-height 1.0s;
+    		transition: 1.0s;
+		}
+
+		translate:hover {
+			color: #000;
+			max-height: fit-content;
+  			max-height: 250px;
+  			background: #DDD;
+		}
+
+		pageend {
+			display: block;
+			height: 500px;
+   			background: #FFF0B5;
+   			opacity: 0;
+		}
+
+		bb {
+			font-size: 20px;
+			font-weight: 900;
+    		margin-bottom: 5px;
+    		display: block;
+		}
+
+		button {
+    		user-select: none !important;
+		}
+
+		button.check {
+    		display: block;
+    		padding: 5px 10px;
+    		border-radius: 5px;
+    		border: none;
+    		font-size: 25px;
+    		margin: 10px;
+		}
+
+		button.check.c:focus  {
+			background: #D0FFCE;
+		}
+
+		button.check.uc:focus {
+			background: #FFCECE;
+		}
+
+		ol {
+			font-size: 25px;
+		}
+
+		note {
+   			/*border-collapse: collapse;*/
+   			/*border-spacing: 20px 0px;*/
+   			display: block;
+   			background: #EFF7C8;
+    		box-shadow: 2px 3px 10px #00000077;
+    		/*transform: rotate3d(1, 1, 1, 349deg);*/
+    		font-size: 25px;
+    		padding: 20px 80px;
+    		line-height: 32px;
+    		margin: 10px 20px;
+    		width: 630px;
+		}
+
+		h3 {
+			text-align: center;
+			font-size: 35px;
+    		margin: 30px 10px 10px 10px;
+		}
+
+		by {
+			display: block;
+			text-align: right;
+			font-size: 20px;
+			display: block;
+			font-family: monospace;
+    		margin: 10px 0px;
+		}
+
+		th, td {
+  			padding: 5px 25px;
+		}
+
+		imgg.p15ex7 {
+			display: block;
+			background-image: url(https://github.com/Agzam-Ar/Eng-bot/blob/main/imgs/p15ex7.png?raw=true);
+			background-color:#FFF; 
+			width: calc(912px / 2);
+			height: calc(723px / 2);
+    		background-repeat: round;
+    		contain: content;
+    		margin: 0px;
+		}
+
+		imgg.p14ex3 {
+			display: block;
+			background-image: url(https://github.com/Agzam-Ar/Eng-bot/blob/main/imgs/p14ex3.png?raw=true);
+			background-color:#FFF; 
+			width: calc(829px * 1);
+			height: calc(569px * 1);
+    		background-repeat: round;
+    		contain: content;
+    		border-radius: 7px;
+    		margin: 0px;
+		}
+
+		word {
+    		position: absolute;
+    		display: block;
+    		background: #FFF;
+    		font-size: 12px;
+    		padding: 3px 25px;
+    		border: #333 2px solid;
+    		border-radius: 7px;
+    		font-weight: bold;
+    		z-index: 999;
+		}
+
+		.light {
+			width: calc(1132px / 2);
+			border: #87cefa 4px solid;
+    		border-radius: 10px;
+  			padding: 10px 25px;
+  			font-size: 20px;
+		}
+
+		spoiler {
+			user-select: none !important;
+			display: inline-block;
+			width: fit-content;
+			background: #00000033;
+			font-size: 20px;
+			color: #FFFFFF00;
+			border: #EEE 2px dashed;
+			border-radius: 7px;
+    		padding: 0px 10px;
+    		height: 30px;
+    		margin: 5px 0px;
+    		transition: 0.25s ease-in-out;
+		}
+
+		spoiler:hover {
+			background: #00000077;
+			color: #FFF;
+		}
+
+		spoiler2 {
+			user-select: none !important;
+			display: inline-block;
+			width: fit-content;
+			background: #EEE;
+			color: #EEE;
+			border-radius: 7px;
+    		padding: 3px 3px;
+    		margin: 0px 5px;
+    		transition: 0.25s ease-in-out;
+		}
+
+		spoiler2:hover {
+			background: #87cefa;
+			color: #FFF;
+		}
+
+
+		li {
+			padding: 5px;
+		}
+
+		table.blue {
+			background: #87cefa;
+		}
+
+		td {
+			background: #FFF;
+		}
+
+		th {
+			background: #c8eaff;
+		}
+
+		.hide {
+			opacity: 0;
+			user-select: none !important;
+		}
+
+		imgtxt {
+			position: absolute;
+			text-align: left;
+			display: block;
+			background: #00000099;
+			color: #EEE;
+			width: 600px;
+			right: 0px;
+			font-weight: 100;
+			font-size: 20px;
+			padding: 10px 20px;
+			border-top-right-radius: 7px;
+			line-height: 35px;
+		}
+	</style>
+</head>
+<body>
+<wrapper id="wrapper">
+<div><h1><h1block>1b</h1block></h1></div>
+<task><ex>1</ex> Listen and repeat.</task><br><br>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/fcb7X7qNMv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+<task><ex>2</ex> Chit-Chat.</task><br><br>
+<div>
+<dilog>
+	<b>A:</b> What's William doing?<br>
+	<b>B:</b> He's skiing.<br>
+	<b class="hide">B: </b>He can ski really well.<br>
+</dilog>
+<br>
+<translate>
+<bb>Перевод</bb><br>
+	<b>A: </b> Что делает Уильям?<br>
+	<b>B: </b> Он катается на лыжах. <br>
+	<b class="hide">B: </b>Он катается действительно хорошо.<br>
+</translate>
+<br>
+<div class="light">
+	Look! Bob <b>is</b> div<b>ing!</b><br>
+	<b>Is</b> Rose div<b>ing</b> too? No, she <b>isn't.</b><br>
+	Rose and Tom <b>aren't skiing.</b>
+</div><br><br>
+</div>
+<br><br>
+<task><ex>3</ex> Read and say the word.</task><br>
+<br>
+<center style="margin: 0px;">
+	<imgg class="p14ex3">
+	<imgtxt>
+		Larry, Lulu and Chuckles are at the seaside today.<br>
+		The sun is <spoiler>shining</spoiler> (shine).<br>
+		Look! What <spoiler>is Chuckles doing</spoiler> (Chuckles/do)?<br>
+		He <spoiler>is eating</spoiler> (eat) an ice cream!<br>
+		Lulu <spoiler>doesn't eat</spoiler> (not/eat) an ice cream.<br>
+		She's <spoiler>is making</spoiler> (make) a sandcastle.<br>
+		Larry <spoiler>is having</spoiler> (have) fun too.<br>
+		He <spoiler>is diving</spoiler> (dive) into the sea!<br>
+	</imgtxt>
+</imgg>
+</center>
+<br><br>
+<task><ex>4</ex> Read and answer the questions.</task><br><br>
+<note>
+	<h3>My Best Friend</h3>
+	<by>by James </by>
+This is my best friend Craig. He's nine years old. Craig has got short dark hair and blue eyes. He's tall for his age and quite plump. Craig is very kind and friendly. In the picture Craig is playing soccer. He likes playing soccer in his free time. Craig is a good friend and we do a lot of things together!
+</note>
+<br>
+
+<ol>
+	<li>Who is James' best friend?</li>
+	<li>How old is he?</li>
+	<li>What does he look like?</li>
+	<li>What's he like?</li>
+	<li>What does he like doing in his free time?</li>
+
+</ol>
+
+<task><ex>5</ex> Now use the questions to talk about your best friend.</task><br><br>
+<task><ex>6</ex> Portfolio: Write about your best friend.</task><br><br>
+<task><ex>7</ex> Let's play!</task><br><br>
+<imgg class="p15ex7"></imgg>
+</wrapper>
+</body>
+</html>
