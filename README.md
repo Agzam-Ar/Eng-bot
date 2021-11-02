@@ -1,7 +1,7 @@
 # Eng-bot
 # Progess:
-#### 18/170  
-▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  **[10,6%]**
+#### 19/170  
+▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  **[11,2%]**
 
 ### MODULES:
 #### ✔ Starter Unit:
@@ -9,13 +9,13 @@
 ✔ a
 ✔ b
 ```
-#### ⌛ Module 1: (3/8) `37,5%`
+#### ⌛ Module 1: (4/8) `50%`
 ```
 ✔ 1a
 ✔ 1b
 ✔ 2a
-⌛ 2b
-✖ Goldilocks
+✔ 2b
+⌛ Goldilocks
 ✖ Activities Modul 1
 ✖ Now I know
 ✖ Arthur + Rascal
