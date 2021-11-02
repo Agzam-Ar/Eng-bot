@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>2b</title>
+	<style type="text/css">
+
+		body {
+			font-family: sans-serif;
+			padding: 10px 25px;
+			text-align: center;
+		}
+
+        ::-webkit-scrollbar {
+			height: 5px;
+			width: 10px;
+			background-color: #EEE;
+		}
+
+
+		::-webkit-scrollbar-thumb {
+			background-color: #999;
+			border-radius: 5px;
+		}
+
+     	wrapper { 
+     		display: block;
+     		position: relative;
+			top: 0;
+			left: 50%;
+			height: fit-content;
+			width: fit-content;
+			transform: translate(-50%, 0);
+			text-align: left;
+     	}
+
+				h1 {
+			display: block;
+			text-align: center;
+			color: #FFF;
+			font-weight: bold;
+			background: #F3AE58;
+			font-size: 70px;
+    	width: 70px;
+    	height: 70px;
+    	border-radius: 10px;
+
+     	position: relative;
+			left: 50%;
+			transform: rotate(45deg) translate(-50%, 0);
+		}
+
+		h1 > h1block {
+			display: block;
+			text-align: center;
+			color: #FFF;
+			font-weight: bold;
+			font-size: 50px;
+    	transform: rotate(-45deg) translate(0, 25%);
+    	width: 50px;
+    	height: 50px;
+		}
+
+		task {
+			font-weight: bold;
+			font-size: 25px;
+		}
+
+		ex {
+			display: inline-block;
+			color: #FFF;
+			background: #F3AE58;
+			width: 20px;
+			text-align: center;
+			padding: 3px 7px;
+			border-radius: 7px;
+			user-select: none;
+		}
+
+		dilog, translate {
+			display: block;
+			margin-left: 15px;
+			border-left: 3px #333 solid;
+			padding: 5px 15px;
+			background: #EEE;
+			font-size: 20px;
+			border-bottom-right-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+
+		br {
+			user-select: none;
+		}
+
+		input {
+   			user-select: text;
+   			color: #555;
+			font-size: 20px;
+			padding: 2px 5px;
+    		width: 50px;
+    		border: none;
+    		outline: none;
+    		transition: 0.15s ease-in-out;
+		}
+		input:focus {
+   			color: #000;
+   			background: #FFF0B5;
+		}
+
+		translate {
+  			height: auto;
+  			max-height: 30px;
+  			overflow: hidden;
+  			background: #EEE;
+  			transition: max-height 1.0s;
+    		transition: 1.0s;
+		}
+
+		translate:hover {
+			color: #000;
+			max-height: fit-content;
+  			max-height: 250px;
+  			background: #DDD;
+		}
+
+		pageend {
+			display: block;
+			height: 500px;
+   			background: #FFF0B5;
+   			opacity: 0;
+		}
+
+		bb {
+			font-size: 20px;
+			font-weight: 900;
+    		margin-bottom: 5px;
+    		display: block;
+		}
+
+		button {
+    		user-select: none !important;
+		}
+
+		button.check {
+    		display: block;
+    		padding: 5px 10px;
+    		border-radius: 5px;
+    		border: none;
+    		font-size: 25px;
+    		margin: 10px;
+		}
+
+		button.check.c:focus  {
+			background: #D0FFCE;
+		}
+
+		button.check.uc:focus {
+			background: #FFCECE;
+		}
+
+		ol {
+			font-size: 25px;
+		}
+
+		table.note {
+   			/*border-collapse: collapse;*/
+   			/*border-spacing: 20px 0px;*/
+   			background: #6678b1;
+    		box-shadow: 2px 3px 10px #0000008f;
+    		transform: rotate3d(1, 1, 1, 349deg);
+    		font-size: 25px;
+    		padding: 0px 0px;
+    		margin: 10px 50px;
+    		border: 2px solid #b9b9b9;
+		}
+
+		th, td {
+  			padding: 5px 25px;
+		}
+
+		imgg.p12ex1 {
+			display: block;
+			background-image: url(https://github.com/Agzam-Ar/Eng-bot/blob/main/imgs/p12ex1.png?raw=true);
+			background-color:#FFF; 
+			border: #000 5px solid;
+			width: calc(1132px / 2);
+			height: calc(723px / 2);
+    		background-repeat: round;
+    		contain: content;
+		}
+
+		imgg.p13ex7 {
+			display: block;
+			background-image: url(https://github.com/Agzam-Ar/Eng-bot/blob/main/imgs/page13ex7.png?raw=true);
+			background-color:#FFF; 
+			width: calc(1496px / 2);
+			height: calc(744px / 2);
+    		background-repeat: round;
+    		contain: content;
+		}
+
+		word {
+    		position: absolute;
+    		display: block;
+    		background: #FFF;
+    		font-size: 12px;
+    		padding: 3px 25px;
+    		border: #333 2px solid;
+    		border-radius: 7px;
+    		font-weight: bold;
+    		z-index: 999;
+		}
+
+		.light {
+			width: calc(1132px / 2);
+			border: #87cefa 4px solid;
+    		border-radius: 10px;
+		}
+
+		spoiler {
+			user-select: none !important;
+			display: inline-block;
+			width: fit-content;
+			background: #FFF;
+			color: #FFF;
+			border: #333 2px dashed;
+			border-radius: 7px;
+    		padding: 3px 10px;
+    		transition: 0.25s ease-in-out;
+		}
+
+		spoiler:hover {
+			background: #EEE;
+			color: #333;
+		}
+
+		spoiler2 {
+			user-select: none !important;
+			display: inline-block;
+			width: fit-content;
+			background: #EEE;
+			color: #EEE;
+			border-radius: 7px;
+    		padding: 3px 3px;
+    		margin: 0px 5px;
+    		transition: 0.25s ease-in-out;
+		}
+
+		spoiler2:hover {
+			background: #87cefa;
+			color: #FFF;
+		}
+
+
+		li {
+			padding: 5px;
+		}
+
+		table.blue {
+			background: #87cefa;
+		}
+
+		td {
+			background: #FFF;
+		}
+
+		th {
+			background: #c8eaff;
+		}
+	</style>
+</head>
+<body>
+<wrapper id="wrapper">
+<div><h1><h1block>2b</h1block></h1></div>
+<task><ex>1</ex> Listen and repeat.</task><br><br>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/E0suckEG84c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br><br>
+<task><ex>2</ex> Chit-Chat</task><br><br>
+<dilog>
+	<b>A:</b> How old is your grandfather?<br>
+	<b>B:</b> He's sixty-two.
+</dilog>
+<br>
+<translate>
+<bb>Перевод</bb><br>
+<b>A:</b> Сколько лет твоему дедушке?<br>
+<b>B:</b> Ему шестьдесят два.
+</translate>
+<br>
+<br>
+<task><ex>3</ex> Sing along!</task><br><br>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/cMpIKMtiS0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<pageend></pageend>
+</wrapper>
+</body>
+</html>
